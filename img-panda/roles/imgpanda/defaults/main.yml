@@ -1,0 +1,6 @@
+# service setup configurtion
+description: "image panda service"
+author: "Or Krichli"
+path: "/tmp/imgpanda/img-panda.js"
+log_path: "/var/log/"
+log_name: "imgpanda.log"

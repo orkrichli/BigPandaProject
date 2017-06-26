@@ -1,0 +1,42 @@
+---
+- name: copy image panda app
+  copy:
+    src: imgpanda-app
+    dest: /tmp/
+    owner: root
+    group: root
+    mode: 0755
+
+- name: update apt cache
+  apt:
+    update-cache: yes
+
+- name: install nodejs and npm
+  apt:
+    name: "{{ item  }}"
+    state: present
+  with_items:
+     - nodejs
+     - npm
+
+- name: install npm dependencies
+  npm:
+    path: /tmp/imgpanda-app
+	
+- name: configure the code to run as a service
+  template:
+    src: imgpanda.conf.js
+    dest: /etc/init/imgpanda.conf
+
+- name: make sure imgpanda is started and enabled
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  with_items:
+     - imgpanda	
+	
+- name: make sure that the service is working
+  uri:
+     url: localhost:8080
+

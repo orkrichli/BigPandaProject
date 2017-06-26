@@ -1,0 +1,22 @@
+# redis configuration
+redis_port: 6379
+redis_bind_interface: 127.0.0.1
+redis_timeout: 300
+redis_save:
+  - 900 1
+  - 300 10
+  - 60 10000
+redis_loglevel: "notice"
+redis_logdir: /var/log/redis
+redis_logfilename: "{{ redis_logdir }}/redis.log"
+redis_dbfilename: dump.rdb
+
+redis_appendonly: "yes"
+
+
+# service setup configurtion
+description: "image panda service"
+author: "Or Krichli"
+path: "/tmp/imgpanda/img-panda.js"
+log_path: "/var/log/"
+log_name: "smartpanda.log"

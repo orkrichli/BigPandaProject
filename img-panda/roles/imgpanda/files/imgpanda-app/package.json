@@ -1,0 +1,13 @@
+{
+  "name": "img_panda",
+  "version": "1.0.0",
+  "description": "Random panda images!!",
+  "main": "img-panda.js",
+  "dependencies": {
+    "httpdispatcher": "^1.0.0",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "config": "~1.26.1"
+  }
+}

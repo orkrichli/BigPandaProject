@@ -1,0 +1,6 @@
+---
+- name: panda image service
+  hosts: 127.0.0.1
+  roles:
+    - { role: imgpanda }
+

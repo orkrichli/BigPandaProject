@@ -1,0 +1,13 @@
+{
+  "name": "smart-panda",
+  "version": "1.0.0",
+  "description": "how many POST requests??",
+  "main": "smart-panda.js",
+  "dependencies": {
+    "httpdispatcher": "^1.0.0",
+    "redis": "~2.7.1",
+    "express": "~4.15.3",
+    "http": "0.0.0",
+    "config": "~1.26.1"
+  }
+}
